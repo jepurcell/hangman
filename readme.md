@@ -20,7 +20,7 @@ To launch the application, run `npm start`.
 
 To run unit tests, run `npm test`.
 
-## building
+## Building
 
 To create a build, run `npm run build`.
 
