@@ -18,9 +18,11 @@ From the project directory, run `npm install`.
 
 To launch the application, run `npm start`.
 
-To play the game, navigate to `http://localhost:3000/` in your browser of choice. Note that only ES6 compatible browsers can run this game.
-
 To run unit tests, run `npm test`.
+
+## building
+
+To create a build, run `npm run build`.
 
 ### Changelog
 - 0.2.0
