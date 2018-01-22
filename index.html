@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hangman</title>
+  </head>
+  <style>
+  @font-face {
+    font-family: "Vera";
+    src: url("./public/fonts/Vera.ttf");
+  }
+  @font-face {
+    font-family: "Natsuki";
+    src: url("./public/fonts/n1.ttf");
+  }
+  * {
+    font-family: Vera;
+    color: black;
+    text-align: center;
+  }
+  html {
+    height: 100%;
+    overflow: auto;
+  }
+  body {
+    text-align: center;
+    min-width: 45rem;
+    background: url("./public/sayori/menu_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #intro, #state-div {
+    width: 700px;
+    margin: auto;
+    max-height: 300px;
+  }
+  #intro {
+    background: url("./public/sayori/frame.png");
+    background-size: 100% 100%;
+  }
+  #state-div {
+    background: url("./public/sayori/textbox.png");
+    background-size: 100% 100%;
+  }
+  #disclaimer-div {
+    font-family: Natsuki;
+  }
+  </style>
+  <body>
+    <div id=game-content>
+      <div id=intro>
+        <h3>Let's play a game!</h3>
+        <p>To make a guess, type a letter below. If you guess incorrectly 10 times, you will lose.</p>
+        <p>Sayori will be upset if you fail. Please don't let her down!</p>
+      </div>
+      <div id=game-img style="height: 410px">
+      </div>
+      <div id=game-div>
+        <input id="input" type="text" autofocus>
+        <button id="guess-btn">Guess</button>
+        <button id="restart-btn" style="display: none;">Play Again</button>
+        <div id='state-div'>
+          <p style='font: 16pt' id="answer-text"></p>
+          <p>
+            <span>Answer:</span>
+            <span id='shown'></span>
+          </p>
+          <span>Guessed: </span>
+          <span id='guessed'></span>
+          <p id=game-state>Type a letter in the box and press the button to guess.</p>
+          <p id=overall-state></p>
+        </div>
+      </div>
+      <div id='disclaimer-div'>
+        This is a Doki Doki Literature Club fan game that is not affiliated with Team Salvato. It is designed to be played only after the official game has been completed. You can download Doki Doki Literature Club at: http://ddlc.moe
+      </div>
+    </div>
+    <script src='./renderer.js'></script>
+  </body>
+
+</html>
