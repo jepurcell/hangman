@@ -2,6 +2,8 @@
 
 This is a simple hangman app based on the popular game Doki Doki Literature Club. It has only been tested on Windows, and there is no guarantee it will work on other Operating Systems.
 
+![Screenshot](screenshot.PNG)
+
 # For Players
 
 The current installer can be found at https://github.com/jepurcell/hangman/releases/tag/v0.2.0
