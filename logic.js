@@ -79,7 +79,7 @@ const startGame = () => {
   guessed = [];
   winFlag = false;
   answer = randomWords();
-  console.log(`the answer is: ${answer}`);
+  console.log(`the answer is: ${answer}`); // eslint-disable-line
   shown = '_'.repeat(answer.length).split('').join(' ');
   return getState();
 };

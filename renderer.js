@@ -1,10 +1,11 @@
-/* global document*/
+/* global document */
+/* eslint-disable import/no-extraneous-dependencies */
 /**
  * Renderer logic for the hangman web game
  * Justin Purcell
  */
-const $ = require('jquery');
-const { ipcRenderer } = require('electron')
+const { ipcRenderer } = require('electron');
+
 const imgDiv = document.getElementById('game-img');
 const shownSpan = document.getElementById('shown');
 const guessedSpan = document.getElementById('guessed');
@@ -14,12 +15,12 @@ const input = document.getElementById('input');
 const btnGuess = document.getElementById('guess-btn');
 const btnRestart = document.getElementById('restart-btn');
 
-//send a message when input is submitted
+// send a message when input is submitted
 const handleInput = () => {
   if (input.value !== '') {
     ipcRenderer.send('game', { guess: input.value });
   }
-}
+};
 
 // handle input on ENTER press or guess button click
 btnGuess.onclick = handleInput;
@@ -30,7 +31,7 @@ input.onkeyup = (e) => {
   }
 };
 
-//listen for response to input
+// listen for response to input
 ipcRenderer.on('guess', (e, data) => {
   // console.log('guess submitted');
   gameP.innerHTML = data.gameText || '';
@@ -53,10 +54,10 @@ ipcRenderer.on('guess', (e, data) => {
   }
 });
 
-//send a message on restart onclick
+// send a message on restart onclick
 btnRestart.onclick = () => {
   ipcRenderer.send('game', { start: true });
-}
+};
 
 ipcRenderer.on('start', (e, data) => {
   input.style = '';
@@ -67,7 +68,7 @@ ipcRenderer.on('start', (e, data) => {
   shownSpan.innerHTML = data.shown || '';
   guessedSpan.innerHTML = '';
   imgDiv.innerHTML = '<img src="./public/sayori/start.png"></img>';
-})
+});
 
 // start or resume the game
 // TODO: refactor --  persisting was a late addition

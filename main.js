@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /**
  * Main process to start the electron app
  * Justin Purcell
@@ -10,7 +11,7 @@ const game = require('./logic.js');
 
 let mainWindow;
 
-app.on('ready', function() {
+app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 1024,
     height: 768,
@@ -22,7 +23,7 @@ app.on('ready', function() {
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
-    slashes: true
+    slashes: true,
   }));
   mainWindow.focus();
 
